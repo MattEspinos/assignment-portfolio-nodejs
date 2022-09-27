@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Reg Exp Tester</title>
+        <link rel="stylesheet" href="index.css"> 
+    </head>
+
+    <body>
+        <h1>Reg Exp Tester</h1>
+
+        <h2>Tests to see if certain expressions match between a regular expression and a specified string.</h2>
+
+        Expression 1: <input id="expression1" type="text" value="" size="10"><br><br>
+        Expression 2: <input id="expression2" type="text" value="" size="10"><br><br>
+
+        <button type="button"  onclick="testExpression()">Test Expression</button><br><br>
+
+        Result: <input id="output" type="text" value="" size="10" disabled><br><br>
+
+        <script>
+            function testExpression(){
+                const str = document.getElementById("expression1").value;
+                const result = new RegExp(document.getElementById("expression2").value);
+                const output = result.test(str);
+    
+                document.getElementById("output").value = output; // true
+            }
+        </script>
+    </body>
+    
+
+</html>
